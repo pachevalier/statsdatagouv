@@ -48,7 +48,9 @@ library("tidyr")
 table_piwik %>%
   select(year, month, unique_visitors)%>%
   tidyr::spread(key = year, value = unique_visitors) %>%
-  mutate(growth = 100 * `2017` / `2016` - 100)
+  mutate(growth = 100 * `2017` / `2016` - 100) %>%
+  select(month, growth)
+
 
 
 
